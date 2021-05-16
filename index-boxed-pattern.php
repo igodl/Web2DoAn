@@ -4,7 +4,11 @@
 <!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-<!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/index-boxed-solid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:45 GMT -->
+<!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/index-boxed-pattern.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:45 GMT -->
+<?php
+include('module/myClass.php');
+$p=new myClass();
+?>
 <head>
 <meta charset="utf-8">
 <title>Webmarket HTML Template - Home Page</title>
@@ -47,7 +51,7 @@
 <link rel="apple-touch-icon-precomposed" href="images/apple-touch/57.png">
 <link rel="shortcut icon" href="images/apple-touch/57.png">
 </head>
-<body class="boxed">
+  <body class="boxed pattern-10">
 <div class="master-wrapper">
  
  
@@ -151,46 +155,10 @@ Wellcome! Please
 <div class="nav-collapse collapse">
 <ul class="nav" id="mainNavigation">
 <li class="dropdown active">
-<a href="index-2.html" class="dropdown-toggle"> Home <b class="caret"></b> </a>
-<ul class="dropdown-menu">
-<li class="dropdown">
-<a href="index-2.html"><i class="icon-caret-right pull-right visible-desktop"></i> Color Themes</a>
-<ul class="dropdown-menu">
-<li><a href="index-2.html">Default Theme</a></li>
-<li><a href="index-grass-green.html">Grass Green Theme</a></li>
-<li><a href="index-oil-green.html">Oil Green Theme</a></li>
-<li><a href="index-gray.html">Gray Theme</a></li>
-</ul>
-</li>
-<li class="dropdown active">
-<a href="index-boxed-solid.html"><i class="icon-caret-right pull-right visible-desktop"></i> Boxed Version</a>
-<ul class="dropdown-menu">
-<li class="active"><a href="index-boxed-solid.html">Boxed - solid color background</a></li>
-<li><a href="index-boxed-pattern.html">Boxed - pattern background</a></li>
-</ul>
-</li>
-</ul>
+<a href="index-boxed-pattern.php" class="dropdown-toggle"> Home </a>
 </li>
 <li class="dropdown dropdown-supermenu">
-<a href="shop.html" class="dropdown-toggle"> Shop <b class="caret"></b> </a>
-<ul class="dropdown-menu supermenu accepts-5">
-<li class="row">
-<div class="span2">
-<ul class="nav nav-pills nav-stacked">
-<li><a href="shop.html">Grid View</a></li>
-<li><a href="shop-list-view.html">List View</a></li>
-<li><a href="shop-no-sidebar.html">Full Width</a></li>
-<li><a href="product.html">Single Product</a></li>
-<li><a href="shop-search.html">Search Results</a></li>
-</ul>
-</div>
-<div class="span3">
-<div class="embed-container"><iframe src="http://player.vimeo.com/video/5606758" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
-<h5><span class="light">Awesome</span> Video</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, maiores.</p>
-</div>
-</li>
-</ul>
+<a href="shop.html" class="dropdown-toggle"> Shop </a>
 </li>
 <li class="dropdown dropdown-megamenu">
 <a href="#" class="dropdown-toggle"> Megamenu <b class="caret"></b> </a>
@@ -209,7 +177,7 @@ Wellcome! Please
 </div>
 <div class="span2">
 <ul class="nav nav-pills nav-stacked">
-<li><a href="#">Sit Ut</a></li>
+<li><a href="#">Consectetur Sit</a></li>
 </ul>
 <ul class="nav unstyled">
 <li><a href="#">Evening Tops</a></li>
@@ -217,25 +185,7 @@ Wellcome! Please
 <li><a href="#">Tunics</a></li>
 </ul>
 <ul class="nav nav-pills nav-stacked">
-<li><a href="#">Ipsum Ut</a></li>
-</ul>
-<ul class="nav unstyled">
-<li><a href="#">Evening Tops</a></li>
-<li><a href="#">Shirts &amp; Blouses</a></li>
-<li><a href="#">Tunics</a></li>
-</ul>
-</div>
-<div class="span2">
-<ul class="nav nav-pills nav-stacked">
-<li><a href="#">Vel Duis</a></li>
-</ul>
-<ul class="nav unstyled">
-<li><a href="#">Evening Tops</a></li>
-<li><a href="#">Shirts &amp; Blouses</a></li>
-<li><a href="#">Tunics</a></li>
-</ul>
-<ul class="nav nav-pills nav-stacked">
-<li><a href="#">Vel Adipiscing</a></li>
+<li><a href="#">Elit Ut</a></li>
 </ul>
 <ul class="nav unstyled">
 <li><a href="#">Evening Tops</a></li>
@@ -245,7 +195,7 @@ Wellcome! Please
 </div>
 <div class="span2">
 <ul class="nav nav-pills nav-stacked">
-<li><a href="#">Adipiscing Sit</a></li>
+<li><a href="#">Eros Condimentum</a></li>
 </ul>
 <ul class="nav unstyled">
 <li><a href="#">Evening Tops</a></li>
@@ -253,7 +203,25 @@ Wellcome! Please
 <li><a href="#">Tunics</a></li>
 </ul>
 <ul class="nav nav-pills nav-stacked">
-<li><a href="#">Dolor Nisi</a></li>
+<li><a href="#">Tincidunt Adipiscing</a></li>
+</ul>
+<ul class="nav unstyled">
+<li><a href="#">Evening Tops</a></li>
+<li><a href="#">Shirts &amp; Blouses</a></li>
+<li><a href="#">Tunics</a></li>
+</ul>
+</div>
+<div class="span2">
+<ul class="nav nav-pills nav-stacked">
+<li><a href="#">Dolor Dapibus</a></li>
+</ul>
+<ul class="nav unstyled">
+<li><a href="#">Evening Tops</a></li>
+<li><a href="#">Shirts &amp; Blouses</a></li>
+<li><a href="#">Tunics</a></li>
+</ul>
+<ul class="nav nav-pills nav-stacked">
+<li><a href="#">Ac Duis</a></li>
 </ul>
 <ul class="nav unstyled">
 <li><a href="#">Evening Tops</a></li>
@@ -341,8 +309,8 @@ Outlet / Sale: &nbsp;
 <div class="span3">
 <div class="cart-container" id="cartContainer">
 <div class="cart">
-<p class="items">CART <span class="dark-clr">(3)</span></p>
-<p class="dark-clr hidden-tablet">$1816.90</p>
+<p class="items">CART <span class="dark-clr">(0)</span></p>
+<p class="dark-clr hidden-tablet">$0</p>
 <a href="checkout-step-1.html" class="btn btn-danger">
  
 <i class="icon-shopping-cart"></i>
@@ -354,7 +322,7 @@ Outlet / Sale: &nbsp;
 <img src="images/dummy/cart-items/cart-item-1.jpg" width="124" height="124" alt="cart item"/>
 </div>
 <div class="desc">
-<strong><a href="product.html">Ac Vulputate Eros Ut</a></strong>
+<strong><a href="product.php">Elit Adipiscing Ac</a></strong>
 <span class="light-clr qty">
 Qty: 1
 &nbsp;
@@ -362,7 +330,7 @@ Qty: 1
 </span>
 </div>
 <div class="price">
-<strong>$4394</strong>
+<strong>$3841</strong>
 </div>
 </div>
 <div class="item-in-cart clearfix">
@@ -370,7 +338,7 @@ Qty: 1
 <img src="images/dummy/cart-items/cart-item-2.jpg" width="124" height="124" alt="cart item"/>
 </div>
 <div class="desc">
-<strong><a href="product.html">Lorem Felis Est Amet Feugiat Ut</a></strong>
+<strong><a href="product.php">Sed Adipiscing Sit Condimentum</a></strong>
 <span class="light-clr qty">
 Qty: 1
 &nbsp;
@@ -378,7 +346,7 @@ Qty: 1
 </span>
 </div>
 <div class="price">
-<strong>$824</strong>
+<strong>$6517</strong>
 </div>
 </div>
 <div class="item-in-cart clearfix">
@@ -386,7 +354,7 @@ Qty: 1
 <img src="images/dummy/cart-items/cart-item-3.jpg" width="124" height="124" alt="cart item"/>
 </div>
 <div class="desc">
-<strong><a href="product.html">Lorem Sit Consectetur Vel Vulputate Amet</a></strong>
+<strong><a href="product.php">Adipiscing Felis Metus</a></strong>
 <span class="light-clr qty">
 Qty: 1
 &nbsp;
@@ -394,7 +362,7 @@ Qty: 1
 </span>
 </div>
 <div class="price">
-<strong>$2309</strong>
+<strong>$2056</strong>
 </div>
 </div>
 <div class="summary">
@@ -587,182 +555,28 @@ We provide support
  
  
 <div class="carouFredSel" data-autoplay="false" data-nav="featuredItems">
+	
 <div class="slide">
 <div class="row">
  
- 
- 
-<div class="span4">
-<div class="product">
-<div class="product-img featured">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/featured-products/featured-1.png" alt="" width="518" height="358"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Buy</a>
+ <?php
+	$p->xuatFeaturedProducts("SELECT * FROM `sanpham` WHERE MaSP <= 3");
+?>
+	
 </div>
 </div>
-</div>
-<div class="main-titles">
-<h4 class="title">$92</h4>
-<h5 class="no-margin"><a href="product.html">Horsefeathers 260</a></h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>  
- 
- 
- 
-<div class="span4">
-<div class="product">
-<div class="product-img featured">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/featured-products/featured-2.png" alt="" width="518" height="358"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Buy</a>
-</div>
-</div>
-</div>
-<div class="main-titles">
-<h4 class="title">$100</h4>
-<h5 class="no-margin"><a href="product.html">Horsefeathers 631</a></h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>  
- 
- 
- 
-<div class="span4">
-<div class="product">
-<div class="product-img featured">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/featured-products/featured-3.png" alt="" width="518" height="358"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Buy</a>
-</div>
-</div>
-</div>
-<div class="main-titles">
-<h4 class="title">$54</h4>
-<h5 class="no-margin"><a href="product.html">Horsefeathers 337</a></h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>  
-</div>
-</div>
+	
 <div class="slide">
 <div class="row">
  
- 
- 
-<div class="span4">
-<div class="product">
-<div class="product-img featured">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/featured-products/featured-1.png" alt="" width="518" height="358"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Buy</a>
+ <?php
+	$p->xuatFeaturedProducts("SELECT * FROM `sanpham` WHERE MaSP > 3 and MaSP <= 6");
+?>
+
+	
 </div>
 </div>
-</div>
-<div class="main-titles">
-<h4 class="title">$93</h4>
-<h5 class="no-margin"><a href="product.html">Horsefeathers 770</a></h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>  
- 
- 
- 
-<div class="span4">
-<div class="product">
-<div class="product-img featured">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/featured-products/featured-2.png" alt="" width="518" height="358"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Buy</a>
-</div>
-</div>
-</div>
-<div class="main-titles">
-<h4 class="title">$82</h4>
-<h5 class="no-margin"><a href="product.html">Horsefeathers 666</a></h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>  
- 
- 
- 
-<div class="span4">
-<div class="product">
-<div class="product-img featured">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/featured-products/featured-3.png" alt="" width="518" height="358"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Buy</a>
-</div>
-</div>
-</div>
-<div class="main-titles">
-<h4 class="title">$87</h4>
-<h5 class="no-margin"><a href="product.html">Horsefeathers 361</a></h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>  
-</div>
-</div>
+	
 </div>  
 </div>
 </div>
@@ -784,245 +598,11 @@ We provide support
 </div>  
 <div class="row popup-products blocks-spacer">
  
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-6.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 421</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-7.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 256</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-8.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 109</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-9.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 367</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>
-</div>  
-<div class="clearfix"></div>  
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-10.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 102</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-11.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 244</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-12.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 67</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/products/product-13.jpg" alt="" width="540" height="374"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 455</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
+ <?php
+$p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` WHERE MaSP >= 7 and MaSP <= 14");	
+?>
+
+ 	
 </div>
 </div>
 </div>  
@@ -1043,125 +623,11 @@ We provide support
 </div>  
 <div class="row popup-products">
  
+<?php
+	$p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` WHERE MaSP >= 15 and MaSP <= 18");
+?>
  
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/most-popular-products/popular-1.jpg" alt="" width="540" height="412"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 375</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/most-popular-products/popular-2.jpg" alt="" width="540" height="412"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 337</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/most-popular-products/popular-3.jpg" alt="" width="540" height="412"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 357</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-</p>
-</div>
-</div>
-</div>  
- 
- 
- 
-<div class="span3">
-<div class="product">
-<div class="product-inner">
-<div class="product-img">
-<div class="picture">
-<a href="product.html"><img src="images/dummy/most-popular-products/popular-4.jpg" alt="" width="540" height="412"/></a>
-<div class="img-overlay">
-<a class="btn more btn-primary" href="product.html">More</a>
-<a href="#" class="btn buy btn-danger">Add to Cart</a>
-</div>
-</div>
-</div>
-<div class="main-titles no-margin">
-<h4 class="title">$32</h4>
-<h5 class="no-margin">Horsefeathers 399</h5>
-</div>
-<p class="desc">59% Cotton Lorem Ipsum Dolor Sit Amet esed ultrices sapien nunc nam frignila</p>
-<p class="center-align stars">
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star stars-clr"></span>
-<span class="icon-star"></span>
-</p>
-</div>
-</div>
-</div>  
+	
 </div>
 </div>
 </div>  
@@ -1555,5 +1021,5 @@ SEND ME A NEW PASSWORD
 <script src="js/custom.js" type="text/javascript"></script>
 </body>
 
-<!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/index-boxed-solid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:45 GMT -->
+<!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/index-boxed-pattern.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:45 GMT -->
 </html>
