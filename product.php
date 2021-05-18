@@ -56,7 +56,7 @@ $p=new myClass();
           </div>
           <div class="span8">
             <div class="topmost-line">
-              <div class="higher-line"> <a href="my-account.html" class="gray-link">My account</a> &nbsp; | &nbsp; <a href="my-account.html" class="gray-link">Wishlist (2)</a> &nbsp; | &nbsp; <a href="checkout-step-1.html" class="gray-link">Checkout</a> </div>
+              <div class="higher-line"> <a href="my-account.html" class="gray-link">My account</a> &nbsp; | &nbsp; <a href="my-account.html" class="gray-link">Wishlist (2)</a> &nbsp; | &nbsp; <a href="checkout-step-1.php" class="gray-link">Checkout</a> </div>
               &nbsp;
               <div class="lang-currency">
                 <div class="dropdown js-selectable-dropdown"> <a data-toggle="dropdown" class="selected" href="#"><span class="js-change-text"><i class="famfamfam-flag-gb"></i> English (EN)</span> <b class="caret"></b></a>
@@ -84,7 +84,7 @@ $p=new myClass();
     </div>
     <div class="container">
       <div class="row">
-        <div class="span7"> <a class="brand" href="index-2.html"> <img src="images/logo.png" alt="Webmarket Logo" width="48" height="48"/> <span class="pacifico">Webmarket</span> <span class="tagline">Really Cool e-Commerce HTML Template</span> </a> </div>
+        <div class="span7"> <a class="brand" href="index-boxed-pattern.php"> <img src="images/logo.png" alt="Webmarket Logo" width="48" height="48"/> <span class="pacifico">Webmarket</span> <span class="tagline">Really Cool e-Commerce HTML Template</span> </a> </div>
         <div class="span5">
           <div class="top-right">
             <div class="icons"> <a href="http://www.facebook.com/ProteusNet"><span class="zocial-facebook"></span></a> <a href="skype:primozcigler?call"><span class="zocial-skype"></span></a> <a href="https://twitter.com/proteusnetcom"><span class="zocial-twitter"></span></a> <a href="http://eepurl.com/xFPYD"><span class="zocial-rss"></span></a> <a href="#"><span class="zocial-wordpress"></span></a> <a href="#"><span class="zocial-android"></span></a> <a href="#"><span class="zocial-html5"></span></a> <a href="#"><span class="zocial-windows"></span></a> <a href="#"><span class="zocial-apple"></span></a> </div>
@@ -101,23 +101,8 @@ $p=new myClass();
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             <div class="nav-collapse collapse">
               <ul class="nav" id="mainNavigation">
-                <li class="dropdown"> <a href="index-2.html" class="dropdown-toggle"> Home <b class="caret"></b> </a>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown"> <a href="index-2.html"><i class="icon-caret-right pull-right visible-desktop"></i> Color Themes</a>
-                      <ul class="dropdown-menu">
-                        <li><a href="index-2.html">Default Theme</a></li>
-                        <li><a href="index-grass-green.php">Grass Green Theme</a></li>
-                        <li><a href="index-oil-green.html">Oil Green Theme</a></li>
-                        <li><a href="index-gray.html">Gray Theme</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown"> <a href="index-boxed-solid.html"><i class="icon-caret-right pull-right visible-desktop"></i> Boxed Version</a>
-                      <ul class="dropdown-menu">
-                        <li><a href="index-boxed-solid.html">Boxed - solid color background</a></li>
-                        <li><a href="index-boxed-pattern.php">Boxed - pattern background</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                <li class="dropdown"> <a href="index-boxed-pattern.php" class="dropdown-toggle"> Home <b class="caret"></b> </a>
+                 
                 </li>
                 <li class="dropdown dropdown-supermenu active"> <a href="shop.html" class="dropdown-toggle"> Shop <b class="caret"></b> </a>
                   <ul class="dropdown-menu supermenu accepts-5">
@@ -267,29 +252,35 @@ $p=new myClass();
           </div>
           <div class="span3">
             <div class="cart-container" id="cartContainer">
+				
               <div class="cart">
-                <p class="items">CART <span class="dark-clr">(3)</span></p>
-                <p class="dark-clr hidden-tablet">$1816.90</p>
-                <a href="checkout-step-1.html" class="btn btn-danger"> <i class="icon-shopping-cart"></i> </a> </div>
+                <p class="items">CART <span class="dark-clr">(0)</span></p>
+                <p class="dark-clr hidden-tablet">$0</p>
+                <a href="checkout-step-1.php" class="btn btn-danger"> <i class="icon-shopping-cart"></i> </a> </div>
+				
               <div class="open-panel">
+				  
                 <div class="item-in-cart clearfix">
                   <div class="image"> <img src="images/dummy/cart-items/cart-item-1.jpg" width="124" height="124" alt="cart item"/> </div>
                   <div class="desc"> <strong><a href="product.html">Lorem Tincidunt Est</a></strong> <span class="light-clr qty"> Qty: 1
                     &nbsp; <a href="#" class="icon-remove-sign" title="Remove Item"></a> </span> </div>
                   <div class="price"> <strong>$5636</strong> </div>
                 </div>
+				  
                 <div class="item-in-cart clearfix">
                   <div class="image"> <img src="images/dummy/cart-items/cart-item-2.jpg" width="124" height="124" alt="cart item"/> </div>
                   <div class="desc"> <strong><a href="product.html">Tincidunt Dapibus Eros Sit Feugiat Condimentum</a></strong> <span class="light-clr qty"> Qty: 1
                     &nbsp; <a href="#" class="icon-remove-sign" title="Remove Item"></a> </span> </div>
                   <div class="price"> <strong>$2789</strong> </div>
                 </div>
+				  
                 <div class="item-in-cart clearfix">
                   <div class="image"> <img src="images/dummy/cart-items/cart-item-3.jpg" width="124" height="124" alt="cart item"/> </div>
                   <div class="desc"> <strong><a href="product.html">Dolor Adipiscing Vulputate Est Eros</a></strong> <span class="light-clr qty"> Qty: 1
                     &nbsp; <a href="#" class="icon-remove-sign" title="Remove Item"></a> </span> </div>
                   <div class="price"> <strong>$6053</strong> </div>
                 </div>
+				  
                 <div class="summary">
                   <div class="line">
                     <div class="row-fluid">
@@ -304,7 +295,7 @@ $p=new myClass();
                     </div>
                   </div>
                 </div>
-                <div class="proceed"> <a href="checkout-step-1.html" class="btn btn-danger pull-right bold higher">CHECKOUT <i class="icon-shopping-cart"></i></a> <small>Shipping costs are calculated based on location. <a href="#">More information</a></small> </div>
+                <div class="proceed"> <a href="checkout-step-1.php" class="btn btn-danger pull-right bold higher">CHECKOUT <i class="icon-shopping-cart"></i></a> <small>Shipping costs are calculated based on location. <a href="#">More information</a></small> </div>
               </div>
             </div>
           </div>
@@ -352,11 +343,12 @@ $p=new myClass();
 			  ?>
 			  
             <hr/>
-            <form action="#" class="form form-inline clearfix">
+            <div  class="form form-inline clearfix">
               <div class="numbered">
                 <input type="text" name="num" value="1" class="tiny-size"/>
                 <span class="clickable add-one icon-plus-sign-alt"></span> <span class="clickable remove-one icon-minus-sign-alt"></span> </div>
               &nbsp;
+<!--
               <select name="color" class="span2">
                 <option value="-1">Select Color</option>
                 <option value="blue">Blue</option>
@@ -373,8 +365,24 @@ $p=new myClass();
                 <option value="XL">Extra Large</option>
                 <option value="XXL">Huge</option>
               </select>
-              <button class="btn btn-danger pull-right"><i class="icon-shopping-cart"></i> &nbsp; Add To Cart</button>
-            </form>
+-->
+				
+			  <form method="post">
+
+				<button class="btn btn-danger pull-right" name="AddToCart"><i class="icon-shopping-cart"></i> &nbsp; Add To Cart</button>
+				  
+			  </form>
+				
+				<?php
+				if(isset($_POST['AddToCart']))
+				{
+					$p->themGioHang($_GET['id']);
+				}
+				
+				?>
+				
+				
+            </div>
             <hr/>
             <div class="share-item push-down-20">
               <div class="row-fluid">

@@ -9,6 +9,24 @@ class myClass {
       return $con;
     }
   }
+	function themGioHang($maSP)
+	{
+	  $link = $this->connection();
+    $result = mysqli_query( $link, "SELECT * FROM `sanpham` WHERE MaSP = $maSP" );
+    $i = mysqli_num_rows( $result );
+    if ( $i > 0 ) {
+       $row = mysqli_fetch_array( $result );
+        $tenSp = $row[ 'TenSP' ];
+        $gia = $row[ 'Gia' ];      
+        $anh = $row[ 'Anh' ];        
+      
+    }
+	else
+		echo "Khong co ket qua nao duoc tim thay";
+		
+		if( ! mysqli_query( $link, "INSERT INTO `giohang`(`MaSP`,`TenSP`, `Gia`, `Anh`) VALUES ('.$maSP.','$tenSp','$gia','$anh')" ))
+			echo "Them vao gio hang that bai";
+	}
 
   // ------------------------ XUAT THONG TIN TRANG INDEX -------------------------------
 
@@ -31,7 +49,7 @@ class myClass {
 			<a href="product.php?id=' . $maSP . '"><img src="images/dummy/products/' . $anh . '" alt="" width="518" height="358"/></a>
 			<div class="img-overlay">
 			<a href="product.php?id=' . $maSP . '" class="btn more btn-primary">More</a>
-			<a href="#" class="btn buy btn-danger">Buy</a>
+			
 			</div>
 			</div>
 			</div>
@@ -43,6 +61,7 @@ class myClass {
 			</div>
 			</div>  
 			';
+//		  <a href="index-boxed-pattern.php?id='.$maSP.'" class="btn buy btn-danger">Buy</a>
       }
     }
   }
@@ -67,7 +86,7 @@ class myClass {
 				<a href="product.php?id=' . $maSP . '"><img src="images/dummy/products/' . $anh . '" alt="" width="540" height="374"/></a>
 				<div class="img-overlay">
 				<a href="product.php?id=' . $maSP . '" class="btn more btn-primary">More</a>
-				<a href="#" class="btn buy btn-danger">Add to Cart</a>
+				
 				</div>
 				</div>
 				</div>
@@ -93,6 +112,7 @@ class myClass {
 				</div>
 				</div>  
 				';
+//		  <a href="#" class="btn buy btn-danger">Add to Cart</a>
       }
     }
   }
@@ -175,7 +195,8 @@ class myClass {
             <div class="product-inner">
               <div class="product-img">
                 <div class="picture"> <a href="product.php?id=' . $id . '"><img src="images/dummy/products/' . $anh . '" alt="" width="540" height="374"/></a>
-                  <div class="img-overlay"> <a class="btn more btn-primary" href="product.php?id=' . $id . '">More</a> <a href="#" class="btn buy btn-danger">Add to Cart</a> </div>
+                  <div class="img-overlay"> <a class="btn more btn-primary" href="product.php?id=' . $id . '">More</a> 
+					 <span class="btn buy btn-danger">Add to Cart</span> </div>
                 </div>
               </div>
               <div class="main-titles no-margin">
@@ -189,8 +210,65 @@ class myClass {
         </div>
 		  
 ';
+
       }
     }
   }
+	
+//--------------------------------- Gio Hang ----------------------------------
+	
+  function xuatGioHang( $query ) {
+    $link = $this->connection();
+    $result = mysqli_query( $link, $query );
+    $i = mysqli_num_rows( $result );
+    if ( $i > 0 ) {
+      while ( $row = mysqli_fetch_array( $result ) ) {
+
+        $tenSP = $row[ 'TenSP' ];
+        $gia = $row[ 'Gia' ];
+        $anh = $row[ 'Anh' ];
+
+        echo '<tr>
+				<td class="image"><img src="images/dummy/products/' . $anh . '" alt="" width="124" height="124"/></td>
+				<td class="desc">'.$tenSP.' &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a> </td>
+				<td class="qty">
+				<input type="text" class="tiny-size" value="1"/>
+				</td>
+				<td class="price">
+				$'.$gia.'
+				</td>
+			</tr>';
+		  
+		  
+      }
+    }
+
+  }
+	
+	function xoaGioHang($query)
+	{
+$link = $this->connection();
+    $result = mysqli_query( $link, $query );
+    $i = mysqli_num_rows( $result );
+    if ( $i > 0 ) {
+      while ( $row = mysqli_fetch_array( $result ) ) {
+
+        $tenSP = $row[ 'TenSP' ];
+        $gia = $row[ 'Gia' ];
+        $anh = $row[ 'Anh' ];
+
+        echo '<tr>
+				<td class="image"><img src="images/dummy/products/' . $anh . '" alt="" width="124" height="124"/></td>
+				<td class="desc">'.$tenSP.' &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a></td>
+				<td class="qty">
+				<input type="text" class="tiny-size" value="1"/>
+				</td>
+				<td class="price">
+				$'.$gia.'
+				</td>
+			</tr>';
+      }
+    }
+	}
 }
 ?>

@@ -74,7 +74,7 @@ Wellcome! Please
 &nbsp; | &nbsp;
 <a href="my-account.html" class="gray-link">Wishlist (2)</a>
 &nbsp; | &nbsp;
-<a href="checkout-step-1.html" class="gray-link">Checkout</a>
+<a href="checkout-step-1.php" class="gray-link">Checkout</a>
 </div>
 &nbsp;
 <div class="lang-currency">
@@ -311,12 +311,13 @@ Outlet / Sale: &nbsp;
 <div class="cart">
 <p class="items">CART <span class="dark-clr">(0)</span></p>
 <p class="dark-clr hidden-tablet">$0</p>
-<a href="checkout-step-1.html" class="btn btn-danger">
+<a href="checkout-step-1.php" class="btn btn-danger">
  
 <i class="icon-shopping-cart"></i>
 </a>
 </div>
 <div class="open-panel">
+	
 <div class="item-in-cart clearfix">
 <div class="image">
 <img src="images/dummy/cart-items/cart-item-1.jpg" width="124" height="124" alt="cart item"/>
@@ -333,6 +334,7 @@ Qty: 1
 <strong>$3841</strong>
 </div>
 </div>
+	
 <div class="item-in-cart clearfix">
 <div class="image">
 <img src="images/dummy/cart-items/cart-item-2.jpg" width="124" height="124" alt="cart item"/>
@@ -349,6 +351,7 @@ Qty: 1
 <strong>$6517</strong>
 </div>
 </div>
+	
 <div class="item-in-cart clearfix">
 <div class="image">
 <img src="images/dummy/cart-items/cart-item-3.jpg" width="124" height="124" alt="cart item"/>
@@ -365,6 +368,7 @@ Qty: 1
 <strong>$2056</strong>
 </div>
 </div>
+	
 <div class="summary">
 <div class="line">
 <div class="row-fluid">
@@ -379,10 +383,12 @@ Qty: 1
 </div>
 </div>
 </div>
+	
 <div class="proceed">
-<a href="checkout-step-1.html" class="btn btn-danger pull-right bold higher">CHECKOUT <i class="icon-shopping-cart"></i></a>
+<a href="checkout-step-1.php" class="btn btn-danger pull-right bold higher">CHECKOUT <i class="icon-shopping-cart"></i></a>
 <small>Shipping costs are calculated based on location. <a href="#">More information</a></small>
 </div>
+	
 </div>
 </div>
 </div>  
@@ -565,7 +571,7 @@ We provide support
 	
 </div>
 </div>
-	
+
 <div class="slide">
 <div class="row">
  
@@ -769,7 +775,7 @@ $p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` WHERE MaSP >= 7 and MaSP <
 Aliquam tincidunt vestibulum risus et gravida.</p>
  
 <div id="mc_embed_signup">
-<form action="http://proteusthemes.us4.list-manage1.com/subscribe/post?u=ea0786485977f5ec8c9283d5c&amp;id=5dad3f35e9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form form-inline" target="_blank" novalidate>
+<form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form form-inline" target="_blank" novalidate>
 <div class="mc-field-group">
 <input type="email" value="" placeholder="Enter your e-mail address" name="EMAIL" class="required email" id="mce-EMAIL">
 <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
