@@ -84,7 +84,7 @@ $p=new myClass();
     </div>
     <div class="container">
       <div class="row">
-        <div class="span7"> <a class="brand" href="index-boxed-pattern.php"> <img src="images/logo.png" alt="Webmarket Logo" width="48" height="48"/> <span class="pacifico">Webmarket</span> <span class="tagline">Really Cool e-Commerce HTML Template</span> </a> </div>
+        <div class="span7"> <a class="brand" href="index.php"> <img src="images/logo.png" alt="Webmarket Logo" width="48" height="48"/> <span class="pacifico">Webmarket</span> <span class="tagline">Really Cool e-Commerce HTML Template</span> </a> </div>
         <div class="span5">
           <div class="top-right">
             <div class="icons"> <a href="http://www.facebook.com/ProteusNet"><span class="zocial-facebook"></span></a> <a href="skype:primozcigler?call"><span class="zocial-skype"></span></a> <a href="https://twitter.com/proteusnetcom"><span class="zocial-twitter"></span></a> <a href="http://eepurl.com/xFPYD"><span class="zocial-rss"></span></a> <a href="#"><span class="zocial-wordpress"></span></a> <a href="#"><span class="zocial-android"></span></a> <a href="#"><span class="zocial-html5"></span></a> <a href="#"><span class="zocial-windows"></span></a> <a href="#"><span class="zocial-apple"></span></a> </div>
@@ -101,7 +101,7 @@ $p=new myClass();
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             <div class="nav-collapse collapse">
               <ul class="nav" id="mainNavigation">
-                <li class="dropdown"> <a href="index-boxed-pattern.php" class="dropdown-toggle"> Home <b class="caret"></b> </a>
+                <li class="dropdown"> <a href="index.php" class="dropdown-toggle"> Home <b class="caret"></b> </a>
                  
                 </li>
                 <li class="dropdown dropdown-supermenu active"> <a href="shop.html" class="dropdown-toggle"> Shop <b class="caret"></b> </a>
@@ -284,12 +284,6 @@ $p=new myClass();
                 <div class="summary">
                   <div class="line">
                     <div class="row-fluid">
-                      <div class="span6">Shipping:</div>
-                      <div class="span6 align-right">$4.99</div>
-                    </div>
-                  </div>
-                  <div class="line">
-                    <div class="row-fluid">
                       <div class="span6">Subtotal:</div>
                       <div class="span6 align-right size-16">$357.81</div>
                     </div>
@@ -345,39 +339,27 @@ $p=new myClass();
             <hr/>
             <div  class="form form-inline clearfix">
               <div class="numbered">
-                <input type="text" name="num" value="1" class="tiny-size"/>
-                <span class="clickable add-one icon-plus-sign-alt"></span> <span class="clickable remove-one icon-minus-sign-alt"></span> </div>
-              &nbsp;
-<!--
-              <select name="color" class="span2">
-                <option value="-1">Select Color</option>
-                <option value="blue">Blue</option>
-                <option value="orange">Orange</option>
-                <option value="black">Black</option>
-              </select>
-              &nbsp;
-              <select name="size" class="span2">
-                <option value="-1">Select Size</option>
-                <option value="XS">Extra Small</option>
-                <option value="S">Small</option>
-                <option value="M">Medium</option>
-                <option value="L">Large</option>
-                <option value="XL">Extra Large</option>
-                <option value="XXL">Huge</option>
-              </select>
--->
-				
-			  <form method="post">
-
-				<button class="btn btn-danger pull-right" name="AddToCart"><i class="icon-shopping-cart"></i> &nbsp; Add To Cart</button>
 				  
-			  </form>
+			  
+				<form method="post">
+					 <input type="number" name="num" id="SL" min="1" style="width:35px" />
+
+					<input type="submit" value="Add To Cart" name="AddToCart" class="btn btn-danger pull-right" style="margin-left: 30px;"></a>
+					
+				</form>
+				  
+			  
 				
 				<?php
-				if(isset($_POST['AddToCart']))
+			  	if(isset($_POST['AddToCart']))
 				{
-					$p->themGioHang($_GET['id']);
+					if(isset($_GET['id']))
+					{
+						
+						$p->themGioHang($_GET['id'],$_REQUEST['num']);
+					}
 				}
+				
 				
 				?>
 				

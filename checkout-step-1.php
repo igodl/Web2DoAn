@@ -6,6 +6,7 @@
 
 <!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/checkout-step-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:38 GMT -->
 	<?php
+	ob_start();
 	include('module/myClass.php');
 	$p=new myClass();
 	?>
@@ -51,14 +52,7 @@
 <link rel="apple-touch-icon-precomposed" href="images/apple-touch/57.png">
 <link rel="shortcut icon" href="images/apple-touch/57.png">
 </head>
-	<script>
-		function xoaSanPham()
-		{
-			<?php
-			echo "cc";
-			?>
-		}
-	</script>
+	
 	
 <body class=" checkout-page">
 <div class="master-wrapper">
@@ -77,7 +71,7 @@
 <header>
 <div class="row">
 <div class="span2">
-<a href="index-boxed-pattern.php"><img src="images/logo-bw.png" alt="Webmarket Logo" width="48" height="48"/></a>
+<a href="index.php"><img src="images/logo-bw.png" alt="Webmarket Logo" width="48" height="48"/></a>
 </div>
 <div class="span6">
 <div class="center-align">
@@ -132,78 +126,18 @@ Confirm &amp; Pay
 	$p->xuatGioHang("SELECT * FROM `giohang`");
 	?>
 	
-<!--
-<tr>
-	<form method="post">
-	<td class="image"><img src="images/dummy/cart-items/cart-item-1.jpg" alt="" width="124" height="124"/></td>
-		 
-		<td class="desc" >Adidas Converse Lorem Ipsum Dolor sit &nbsp;
-		
-		<a title="Remove Item" name="xoaSP" href="checkout-step-1.php?2">Xóa</a>
-		
-	</td>
-	<td class="qty">
-	<input type="text" class="tiny-size" value="2"/>
-	</td>
-	<td class="price">
-	$59
-	</td>
-	</form>
 	
 	<?php
-	if(isset($_POST['xoaSP']))
-		
-	
+		if(isset($_GET['Xoa']))
+		{
+			$id=$_GET['Xoa'];
+			$p->xoaSPGioHang("DELETE FROM `giohang` WHERE MaSP = $id");
+			header('location:checkout-step-1.php');
+			
+		}
 	?>
 	
-</tr>
 	
-<tr>
-<td class="image"><img src="images/dummy/cart-items/cart-item-2.jpg" alt="" width="124" height="124"/></td>
-<td class="desc">Adidas Converse Lorem Ipsum Dolor sit &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a></td>
-<td class="qty">
-<input type="text" class="tiny-size" value="3"/>
-</td>
-<td class="price">
-$59
-</td>
-</tr>
-	
-<tr>
-<td class="image"><img src="images/dummy/cart-items/cart-item-3.jpg" alt="" width="124" height="124"/></td>
-<td class="desc">Adidas Converse Lorem Ipsum Dolor sit &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a></td>
-<td class="qty">
-<input type="text" class="tiny-size" value="3"/>
-</td>
-<td class="price">
-$59
-</td>
-</tr>
-	
-<tr>
-<td class="image"><img src="images/dummy/cart-items/cart-item-4.jpg" alt="" width="124" height="124"/></td>
-<td class="desc">Adidas Converse Lorem Ipsum Dolor sit &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a></td>
-<td class="qty">
-<input type="text" class="tiny-size" value="3"/>
-</td>
-<td class="price">
-$59
-</td>
-</tr>
-	
-<tr>
-<td class="image"><img src="images/dummy/cart-items/cart-item-5.jpg" alt="" width="124" height="124"/></td>
-<td class="desc">Adidas Converse Lorem Ipsum Dolor sit &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a></td>
-<td class="qty">
-<input type="text" class="tiny-size" value="3"/>
-</td>
-<td class="price">
-$59
-</td>
-</tr>
-	
-<tr>
--->
 	
 <td colspan="2" rowspan="2">
 <div class="alert alert-info">
@@ -212,14 +146,13 @@ Shipping costs are calculated based on location. <a href="#">More information</a
 </div>
 </td>
 	
-<td class="stronger">Shipping:</td>
-<td class="stronger"><div class="align-right">$4.99</div></td>
+
 	
 </tr>
 	
 <tr>
 <td class="stronger">Subtotal:</td>
-<td class="stronger"><div class="size-16 align-right">$357.81</div></td>
+<td class="stronger"><div class="size-16 align-right"><?php $p->tienGioHang("SELECT * FROM `giohang`") ?></div></td>
 </tr>
 	
 </tbody>

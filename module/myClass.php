@@ -9,24 +9,39 @@ class myClass {
       return $con;
     }
   }
-	function themGioHang($maSP)
-	{
-	  $link = $this->connection();
+
+  function themGioHang( $maSP, $soLuong ) {
+    $link = $this->connection();
     $result = mysqli_query( $link, "SELECT * FROM `sanpham` WHERE MaSP = $maSP" );
     $i = mysqli_num_rows( $result );
     if ( $i > 0 ) {
-       $row = mysqli_fetch_array( $result );
-        $tenSp = $row[ 'TenSP' ];
-        $gia = $row[ 'Gia' ];      
-        $anh = $row[ 'Anh' ];        
-      
-    }
-	else
-		echo "Khong co ket qua nao duoc tim thay";
-		
-		if( ! mysqli_query( $link, "INSERT INTO `giohang`(`MaSP`,`TenSP`, `Gia`, `Anh`) VALUES ('.$maSP.','$tenSp','$gia','$anh')" ))
-			echo "Them vao gio hang that bai";
-	}
+      $row = mysqli_fetch_array( $result );
+      $tenSp = $row[ 'TenSP' ];
+      $gia = $row[ 'Gia' ];
+      $anh = $row[ 'Anh' ];
+
+    } else
+      echo "Khong co ket qua nao duoc tim thay";
+
+    mysqli_query( $link, "INSERT INTO `giohang`(`MaSP`,`TenSP`,`SoLuong`, `Gia`, `Anh`) VALUES ('$maSP','$tenSp','$soLuong','$gia','$anh')" );
+  }
+
+  function themTrungGioHang( $maSP, $soLuongThem ) {
+    $link = $this->connection();
+    $result = mysqli_query( $link, "SELECT MaSP FROM `giohang` WHERE MaSP = $maSP" );
+    $i = mysqli_num_rows( $result );
+    if ( $i > 0 ) {
+      $row = mysqli_fetch_array( $result );
+
+      $soLuongDangCo = $row[ 'SoLuong' ];
+
+    } else
+      echo "Khong co ket qua nao duoc tim thay";
+	  
+	 $soLuongDangCo+=$soLuongThem; 
+
+    mysqli_query( $link, "UPDATE `giohang` SET `SoLuong`='$soLuongDangCo' WHERE 1");
+  }
 
   // ------------------------ XUAT THONG TIN TRANG INDEX -------------------------------
 
@@ -61,7 +76,7 @@ class myClass {
 			</div>
 			</div>  
 			';
-//		  <a href="index-boxed-pattern.php?id='.$maSP.'" class="btn buy btn-danger">Buy</a>
+        //		  <a href="index-boxed-pattern.php?id='.$maSP.'" class="btn buy btn-danger">Buy</a>
       }
     }
   }
@@ -112,7 +127,7 @@ class myClass {
 				</div>
 				</div>  
 				';
-//		  <a href="#" class="btn buy btn-danger">Add to Cart</a>
+        //		  <a href="#" class="btn buy btn-danger">Add to Cart</a>
       }
     }
   }
@@ -214,9 +229,9 @@ class myClass {
       }
     }
   }
-	
-//--------------------------------- Gio Hang ----------------------------------
-	
+
+  //--------------------------------- Gio Hang ----------------------------------
+
   function xuatGioHang( $query ) {
     $link = $this->connection();
     $result = mysqli_query( $link, $query );
@@ -224,51 +239,88 @@ class myClass {
     if ( $i > 0 ) {
       while ( $row = mysqli_fetch_array( $result ) ) {
 
+        $maSP = $row[ 'MaSP' ];
         $tenSP = $row[ 'TenSP' ];
+        $soLuong = $row[ 'SoLuong' ];
         $gia = $row[ 'Gia' ];
         $anh = $row[ 'Anh' ];
 
         echo '<tr>
 				<td class="image"><img src="images/dummy/products/' . $anh . '" alt="" width="124" height="124"/></td>
-				<td class="desc">'.$tenSP.' &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a> </td>
+				<td class="desc">' . $tenSP . ' &nbsp; <a title="Remove Item" href="checkout-step-1.php?Xoa=' . $maSP . '">Xóa</a> </td>
 				<td class="qty">
-				<input type="text" class="tiny-size" value="1"/>
+				<input type="text" class="tiny-size" value="' . $soLuong . '"/>
 				</td>
 				<td class="price">
-				$'.$gia.'
+				$' . $gia . '
 				</td>
 			</tr>';
-		  
-		  
+
+
       }
     }
 
   }
-	
-	function xoaGioHang($query)
-	{
-$link = $this->connection();
+
+  function tienGioHang( $query ) {
+    $link = $this->connection();
     $result = mysqli_query( $link, $query );
+    $i = mysqli_num_rows( $result );
+    $tongTien = 0;
+    if ( $i > 0 ) {
+      while ( $row = mysqli_fetch_array( $result ) ) {
+
+        $maSP = $row[ 'MaSP' ];
+        $tenSP = $row[ 'TenSP' ];
+        $soLuong = $row[ 'SoLuong' ];
+        $gia = $row[ 'Gia' ];
+        $anh = $row[ 'Anh' ];
+        $tongTien += $soLuong * $gia;
+      }
+      echo '$' . $tongTien;
+    }
+
+  }
+
+  function xoaSPGioHang( $query ) {
+    $link = $this->connection();
+
+    if ( !mysqli_query( $link, $query ) ) {
+      echo "Xoa san pham gio hang that bai";
+    }
+
+  }
+
+//---------------------------------------- Dang Nhap -----------------------------------------------------
+	
+  function login( $taikhoan, $matkhau ) {
+    $link = $this->connection();
+    $result = mysqli_query( $link, "SELECT * FROM `account` WHERE `PhanQuyen` = 'admin' " );
     $i = mysqli_num_rows( $result );
     if ( $i > 0 ) {
       while ( $row = mysqli_fetch_array( $result ) ) {
 
-        $tenSP = $row[ 'TenSP' ];
-        $gia = $row[ 'Gia' ];
-        $anh = $row[ 'Anh' ];
+        $id = $row[ 'Id' ];
+        $user = $row[ 'User' ];
+        $pass = $row[ 'Pass' ];
+        $tenUser = $row[ 'TenUser' ];
+        $phanQuyen = $row[ 'PhanQuyen' ];
 
-        echo '<tr>
-				<td class="image"><img src="images/dummy/products/' . $anh . '" alt="" width="124" height="124"/></td>
-				<td class="desc">'.$tenSP.' &nbsp; <a title="Remove Item" class="icon-remove-sign" href="#"></a></td>
-				<td class="qty">
-				<input type="text" class="tiny-size" value="1"/>
-				</td>
-				<td class="price">
-				$'.$gia.'
-				</td>
-			</tr>';
+        if ( $taikhoan == $user && $matkhau == $pass ) {
+          session_start();
+          $_SESSION[ 'myuser' ] = $taikhoan;
+          $_SESSION[ 'mypass' ] = $matkhau;
+          header( 'location:index.php' );
+
+        } else if ( $taikhoan == "" || $matkhau == "" ) {
+          echo "Vui lòng điền đầy đủ thông tin";
+        }
+
+
       }
     }
-	}
+  }
+
+
 }
 ?>

@@ -890,17 +890,22 @@ Aliquam tincidunt vestibulum risus et gravida.</p>
 <h3 id="loginModalLabel"><span class="light">Login</span> To Webmarket</h3>
 </div>
 <div class="modal-body">
-<form method="post" action="#">
+	
+<form method="post" action="admin/admin.php">
 <div class="control-group">
 <label class="control-label hidden shown-ie8" for="inputEmail">Username</label>
 <div class="controls">
-<input type="text" class="input-block-level" id="inputEmail" placeholder="Username" required>
+	
+<input name="user" type="text" class="input-block-level" id="inputEmail" placeholder="Username" required/>
+	
 </div>
 </div>
 <div class="control-group">
 <label class="control-label hidden shown-ie8" for="inputPassword">Password</label>
 <div class="controls">
-<input type="password" class="input-block-level" id="inputPassword" placeholder="Password" required>
+	
+<input name="pass" type="password" class="input-block-level" id="inputPassword" placeholder="Password" required>
+	
 </div>
 </div>
 <div class="control-group">
@@ -911,12 +916,14 @@ Remember me
 </label>
 </div>
 </div>
-<button type="submit" class="btn btn-primary input-block-level bold higher">
+	
+<input type="submit" class="btn btn-primary input-block-level bold higher">
 SIGN IN
-</button>
+</input>
 </form>
+	
 <p class="center-align push-down-0">
-<a data-toggle="modal" role="button" href="#forgotPassModal" data-dismiss="modal">Forgot your password?</a>
+<a data-toggle="mo"btn bdal" role="button" href="#forgotPassModal" data-dismiss="modal">Forgot your password?</a>
 </p>
 </div>
 </div>
