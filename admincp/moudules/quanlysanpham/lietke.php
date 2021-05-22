@@ -11,6 +11,7 @@ $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
         <th>Tên Sản Phẩm</th>
         <th>Giá Sản Phẩm</th>
         <th>Hình Ảnh</th>
+		<th>Mô tả</th>
         <th>Nội Dung</th>
         <th>Quản Lý</th>
     </tr>
@@ -24,8 +25,9 @@ $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
             <td><?php echo $row['MaSP'] ?></td>
             <td><?php echo $row['TenSP'] ?></td>
             <td><?php echo $row['Gia'] ?></td>
-            <td> <img src="../images/dummy/products/<?php echo $row['Anh'] ?>" width="150px"> </td>
+            <td> <img src="../images/dummy/products/<?php echo $row['Anh'] ?>" width="250px"> </td>
             <td><?php echo $row['MoTa'] ?></td>
+			<td><?php echo $row['NoiDung'] ?></td>
             <td><a href="moudules/quanlysanpham/xuly.php?idsanpham=<?php echo $row['MaSP'] ?>">Xóa</a> | <a href="?action=quanlysanpham&query=sua&idsanpham=<?php echo $row['MaSP'] ?>">Sửa</a></td>
         </tr>
     <?php

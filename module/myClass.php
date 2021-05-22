@@ -12,10 +12,10 @@ class myClass {
 
   function themGioHang( $maSP, $soLuong ) {
     $link = $this->connection();
-    $result = mysqli_query( $link, "SELECT * FROM `sanpham` WHERE MaSP = $maSP" );
-    $i = mysqli_num_rows( $result );
+    $resultThongTin = mysqli_query( $link, "SELECT * FROM `sanpham` WHERE MaSP = $maSP" );
+    $i = mysqli_num_rows( $resultThongTin );
     if ( $i > 0 ) {
-      $row = mysqli_fetch_array( $result );
+      $row = mysqli_fetch_array( $resultThongTin );
       $tenSp = $row[ 'TenSP' ];
       $gia = $row[ 'Gia' ];
       $anh = $row[ 'Anh' ];
@@ -23,25 +23,29 @@ class myClass {
     } else
       echo "Khong co ket qua nao duoc tim thay";
 
-    mysqli_query( $link, "INSERT INTO `giohang`(`MaSP`,`TenSP`,`SoLuong`, `Gia`, `Anh`) VALUES ('$maSP','$tenSp','$soLuong','$gia','$anh')" );
-  }
-
-  function themTrungGioHang( $maSP, $soLuongThem ) {
-    $link = $this->connection();
-    $result = mysqli_query( $link, "SELECT MaSP FROM `giohang` WHERE MaSP = $maSP" );
-    $i = mysqli_num_rows( $result );
-    if ( $i > 0 ) {
-      $row = mysqli_fetch_array( $result );
-
-      $soLuongDangCo = $row[ 'SoLuong' ];
-
-    } else
-      echo "Khong co ket qua nao duoc tim thay";
+	  $resultTrung=mysqli_query($link,"SELECT * FROM `giohang` WHERE MaSP = $maSP");
+	  $j=mysqli_num_rows( $resultTrung);
 	  
-	 $soLuongDangCo+=$soLuongThem; 
-
-    mysqli_query( $link, "UPDATE `giohang` SET `SoLuong`='$soLuongDangCo' WHERE 1");
+	  if($j > 0)
+	  {
+		  $row1=mysqli_fetch_array( $resultTrung );
+		  $soLuongDangCo=$row1['SoLuong'];
+		  
+		  $soLuongMoi = $soLuongDangCo + $soLuong;
+		  
+		  mysqli_query($link,"UPDATE `giohang` SET `SoLuong`='$soLuongMoi' WHERE MaSP = $maSP");
+	  }
+	  else
+	  {
+		   mysqli_query( $link, "INSERT INTO `giohang`(`MaSP`,`TenSP`,`SoLuong`, `Gia`, `Anh`) VALUES ('$maSP','$tenSp','$soLuong','$gia','$anh')" );
+	  }
+		  
+   
+	  
+	  
   }
+
+  
 
   // ------------------------ XUAT THONG TIN TRANG INDEX -------------------------------
 
@@ -93,12 +97,12 @@ class myClass {
         $moTa = $row[ 'MoTa' ];
         $anh = $row[ 'Anh' ];
 
-        echo '<div class="span3">
+        echo '<div class="span3" style="height: 350px;">
 				<div class="product">
 				<div class="product-inner">
 				<div class="product-img">
 				<div class="picture">
-				<a href="product.php?id=' . $maSP . '"><img src="images/dummy/products/' . $anh . '" alt="" width="540" height="374"/></a>
+				<a href="product.php?id=' . $maSP . '"><img src="images/dummy/products/' . $anh . '" alt="" width="50px" height="374"/></a>
 				<div class="img-overlay">
 				<a href="product.php?id=' . $maSP . '" class="btn more btn-primary">More</a>
 				
@@ -281,6 +285,14 @@ class myClass {
     }
 
   }
+	
+	function soMonHang( $query ) {
+    $link = $this->connection();
+    $result = mysqli_query( $link, $query );
+    $i = mysqli_num_rows( $result );
+   
+      echo $i;
+  }
 
   function xoaSPGioHang( $query ) {
     $link = $this->connection();
@@ -291,12 +303,38 @@ class myClass {
 
   }
 
-//---------------------------------------- Dang Nhap -----------------------------------------------------
-	
+  //---------------------------------------- Dang Nhap -----------------------------------------------------
+
   function login( $taikhoan, $matkhau ) {
+      $link = $this->connection();
+      $result = mysqli_query( $link, "SELECT * FROM `account` WHERE `PhanQuyen` = 'admin' " );
+      $i = mysqli_num_rows( $result );
+      if ( $i > 0 ) {
+        while ( $row = mysqli_fetch_array( $result ) ) {
+
+          $id = $row[ 'Id' ];
+          $user = $row[ 'User' ];
+          $pass = $row[ 'Pass' ];
+          $tenUser = $row[ 'TenUser' ];
+          $phanQuyen = $row[ 'PhanQuyen' ];
+
+          if ( $taikhoan == $user && $matkhau == $pass ) {
+            session_start();
+            $_SESSION[ 'myuser' ] = $taikhoan;
+            $_SESSION[ 'mypass' ] = $matkhau;
+            header( 'location:admincp/admin.php' );
+            break;
+          }
+        }
+      }
+  }
+
+  function confirmlogin( $taikhoan, $matkhau ) {
     $link = $this->connection();
     $result = mysqli_query( $link, "SELECT * FROM `account` WHERE `PhanQuyen` = 'admin' " );
     $i = mysqli_num_rows( $result );
+    $check = 0;
+
     if ( $i > 0 ) {
       while ( $row = mysqli_fetch_array( $result ) ) {
 
@@ -307,20 +345,14 @@ class myClass {
         $phanQuyen = $row[ 'PhanQuyen' ];
 
         if ( $taikhoan == $user && $matkhau == $pass ) {
-          session_start();
-          $_SESSION[ 'myuser' ] = $taikhoan;
-          $_SESSION[ 'mypass' ] = $matkhau;
-          header( 'location:index.php' );
-
-        } else if ( $taikhoan == "" || $matkhau == "" ) {
-          echo "Vui lòng điền đầy đủ thông tin";
+          $check = 1;
+          break;
         }
-
-
       }
     }
+    if ( $check == 0 )
+      header( 'location:../index.php' );
   }
-
 
 }
 ?>

@@ -17,9 +17,14 @@
 
         <tr>
             <td>Mô tả</td>
-            <td><textarea row="10" width="100%" style="resize: none;" name="noidung"></textarea></td>
+            <td><textarea row="10" width="100%"  name="moTa"></textarea></td>
         </tr>
-
+		
+		<tr>
+            <td>Nội dung</td>
+            <td><textarea row="10" width="100%"  name="noidung"></textarea></td>
+        </tr>
+		
         <tr>
             <td colspan="2"><input type="submit" name="themsanpham" value="Thêm Sản Phẩm"></td>
         </tr>

@@ -27,10 +27,15 @@ $query_sua_sp = mysqli_query($mysqli, $sql_sua_sp);
             </tr>
 
             <tr>
-                <td>Nội dung</td>
-                <td><textarea row="10" width="100%" style="resize: none;" name="noidung"><?php echo $dong['MoTa'] ?></textarea></td>
+                <td>Mô tả</td>
+                <td><textarea row=10 name="moTa"><?php echo $dong['MoTa'] ?></textarea></td>
             </tr>
-
+			
+			<tr>
+                <td>Nội dung</td>
+                <td><textarea row="10" width="100%" name="noidung"><?php echo $dong['NoiDung'] ?></textarea></td>
+            </tr>
+			
             <tr>
                 <td colspan="2"><input type="submit" name="suasanpham" value="Sửa Sản Phẩm"></td>
             </tr>

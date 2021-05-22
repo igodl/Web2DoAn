@@ -6,6 +6,7 @@
 
 <!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/index-boxed-pattern.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:45 GMT -->
 <?php
+	ob_start();
 include('module/myClass.php');
 $p=new myClass();
 ?>
@@ -63,7 +64,7 @@ $p=new myClass();
 <div class="span4">
 <div class="higher-line">
 Wellcome! Please
-<a href="#registerModal" role="button" data-toggle="modal">Register</a> or
+<!--<a href="#registerModal" role="button" data-toggle="modal">Register</a> or-->
 <a href="#loginModal" role="button" data-toggle="modal">Login</a>
 </div>
 </div>
@@ -109,7 +110,7 @@ Wellcome! Please
  
  
 <div class="span7">
-<a class="brand" href="index-2.html">
+<a class="brand" href="index.php">
 <img src="images/logo.png" alt="Webmarket Logo" width="48" height="48"/>
 <span class="pacifico">Webmarket</span>
 <span class="tagline">Really Cool e-Commerce HTML Template</span>
@@ -155,7 +156,7 @@ Wellcome! Please
 <div class="nav-collapse collapse">
 <ul class="nav" id="mainNavigation">
 <li class="dropdown active">
-<a href="index-boxed-pattern.php" class="dropdown-toggle"> Home </a>
+<a href="index.php" class="dropdown-toggle"> Home </a>
 </li>
 <li class="dropdown dropdown-supermenu">
 <a href="shop.html" class="dropdown-toggle"> Shop </a>
@@ -308,16 +309,18 @@ Outlet / Sale: &nbsp;
  
 <div class="span3">
 <div class="cart-container" id="cartContainer">
+	
 <div class="cart">
-<p class="items">CART <span class="dark-clr">(0)</span></p>
-<p class="dark-clr hidden-tablet">$0</p>
+<p class="items">CART <span class="dark-clr">(<?php $p->soMonHang("SELECT * FROM `giohang`") ?>)</span></p>
+<p class="dark-clr hidden-tablet"><?php $p->tienGioHang("SELECT * FROM `giohang`")  ?></p>
 <a href="checkout-step-1.php" class="btn btn-danger">
  
 <i class="icon-shopping-cart"></i>
 </a>
 </div>
-<div class="open-panel">
 	
+<!--
+<div class="open-panel">
 <div class="item-in-cart clearfix">
 <div class="image">
 <img src="images/dummy/cart-items/cart-item-1.jpg" width="124" height="124" alt="cart item"/>
@@ -390,6 +393,8 @@ Qty: 1
 </div>
 	
 </div>
+	
+-->
 </div>
 </div>  
 </div>
@@ -566,7 +571,7 @@ We provide support
 <div class="row">
  
  <?php
-	$p->xuatFeaturedProducts("SELECT * FROM `sanpham` WHERE MaSP <= 3");
+	$p->xuatFeaturedProducts("SELECT * FROM `sanpham` ORDER BY RAND() LIMIT 3");
 ?>
 	
 </div>
@@ -576,7 +581,7 @@ We provide support
 <div class="row">
  
  <?php
-	$p->xuatFeaturedProducts("SELECT * FROM `sanpham` WHERE MaSP > 3 and MaSP <= 6");
+	$p->xuatFeaturedProducts("SELECT * FROM `sanpham` ORDER BY RAND() LIMIT 3");
 ?>
 
 	
@@ -605,7 +610,7 @@ We provide support
 <div class="row popup-products blocks-spacer">
  
  <?php
-$p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` WHERE MaSP >= 7 and MaSP <= 14");	
+$p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` ORDER BY RAND() LIMIT 8");	
 ?>
 
  	
@@ -630,7 +635,7 @@ $p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` WHERE MaSP >= 7 and MaSP <
 <div class="row popup-products">
  
 <?php
-	$p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` WHERE MaSP >= 15 and MaSP <= 18");
+	$p->xuatNewProductsInTheShop("SELECT * FROM `sanpham` ORDER BY RAND() LIMIT 4");
 ?>
  
 	
@@ -891,12 +896,12 @@ Aliquam tincidunt vestibulum risus et gravida.</p>
 </div>
 <div class="modal-body">
 	
-<form method="post" action="admin/admin.php">
+<form method="post">
 <div class="control-group">
 <label class="control-label hidden shown-ie8" for="inputEmail">Username</label>
 <div class="controls">
 	
-<input name="user" type="text" class="input-block-level" id="inputEmail" placeholder="Username" required/>
+	<input name="user" type="text" class="input-block-level" id="inputEmail" placeholder="Username" required/>
 	
 </div>
 </div>
@@ -904,34 +909,52 @@ Aliquam tincidunt vestibulum risus et gravida.</p>
 <label class="control-label hidden shown-ie8" for="inputPassword">Password</label>
 <div class="controls">
 	
-<input name="pass" type="password" class="input-block-level" id="inputPassword" placeholder="Password" required>
+	<input name="pass" type="password" class="input-block-level" id="inputPassword" placeholder="Password" required>
 	
 </div>
 </div>
 <div class="control-group">
 <div class="controls">
+<!--
 <label class="checkbox">
 <input type="checkbox">
 Remember me
 </label>
+-->
 </div>
 </div>
 	
-<input type="submit" class="btn btn-primary input-block-level bold higher">
-SIGN IN
+<input name="nut" type="submit" class="btn btn-primary input-block-level bold higher" value="SIGN IN">
 </input>
 </form>
 	
+<?php
+	if(isset($_POST['nut']))
+	{
+		switch($_POST['nut'])
+{
+		case "SIGN IN":
+		{
+			$p->login($_POST['user'],$_POST['pass']);			
+			break;
+		}
+	default:break;
+}
+	}
+
+?>
+	
 <p class="center-align push-down-0">
-<a data-toggle="mo"btn bdal" role="button" href="#forgotPassModal" data-dismiss="modal">Forgot your password?</a>
+<!--<a data-toggle="mo"btn bdal" role="button" href="#forgotPassModal" data-dismiss="modal">Forgot your password?</a>-->
 </p>
 </div>
 </div>
  
+<!--
 <div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-<h3 id="registerModalLabel"><span class="light">Register</span> To Webmarket</h3>
+<h3 id="registerModalLabel"><span class="light">Regiaaaaaster</span> To Webmarket</h3>
 </div>
 <div class="modal-body">
 <form method="post" action="#">
@@ -963,6 +986,7 @@ REGISTER
 </div>
 </div>
  
+-->
 <div id="forgotPassModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="forgotPassModalLabel" aria-hidden="true">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

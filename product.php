@@ -8,6 +8,7 @@
 
 <!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/product.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:43:09 GMT -->
 <?php
+	ob_start();
 include('module/myClass.php');
 $p=new myClass();
 ?>
@@ -254,10 +255,15 @@ $p=new myClass();
             <div class="cart-container" id="cartContainer">
 				
               <div class="cart">
-                <p class="items">CART <span class="dark-clr">(0)</span></p>
-                <p class="dark-clr hidden-tablet">$0</p>
-                <a href="checkout-step-1.php" class="btn btn-danger"> <i class="icon-shopping-cart"></i> </a> </div>
+<p class="items">CART <span class="dark-clr">(<?php $p->soMonHang("SELECT * FROM `giohang`") ?>)</span></p>
+<p class="dark-clr hidden-tablet"><?php $p->tienGioHang("SELECT * FROM `giohang`")  ?></p>
+<a href="checkout-step-1.php" class="btn btn-danger">
+ 
+<i class="icon-shopping-cart"></i>
+</a>
+</div>
 				
+<!--
               <div class="open-panel">
 				  
                 <div class="item-in-cart clearfix">
@@ -291,6 +297,8 @@ $p=new myClass();
                 </div>
                 <div class="proceed"> <a href="checkout-step-1.php" class="btn btn-danger pull-right bold higher">CHECKOUT <i class="icon-shopping-cart"></i></a> <small>Shipping costs are calculated based on location. <a href="#">More information</a></small> </div>
               </div>
+-->
+				
             </div>
           </div>
         </div>
@@ -302,7 +310,7 @@ $p=new myClass();
       <div class="row">
         <div class="span12">
           <ul class="breadcrumb">
-            <li> <a href="index-2.html">Webmarket</a> </li>
+            <li> <a href="index.php">Webmarket</a> </li>
             <li><span class="icon-chevron-right"></span></li>
             <li> <a href="shop.html">Shop</a> </li>
             <li><span class="icon-chevron-right"></span></li>
@@ -342,7 +350,7 @@ $p=new myClass();
 				  
 			  
 				<form method="post">
-					 <input type="number" name="num" id="SL" min="1" style="width:35px" />
+					 <input type="number" name="num" id="SL" min="1" value="1" style="width:35px" />
 
 					<input type="submit" value="Add To Cart" name="AddToCart" class="btn btn-danger pull-right" style="margin-left: 30px;"></a>
 					
@@ -354,9 +362,9 @@ $p=new myClass();
 			  	if(isset($_POST['AddToCart']))
 				{
 					if(isset($_GET['id']))
-					{
-						
+					{						
 						$p->themGioHang($_GET['id'],$_REQUEST['num']);
+						header('Refresh:0');
 					}
 				}
 				

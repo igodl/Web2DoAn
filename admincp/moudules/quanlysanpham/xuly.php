@@ -6,13 +6,14 @@ $masp = $_POST['masp'];
 $gia = $_POST['giasp'];
 $tensp = $_POST['tensp'];
 $content = $_POST['noidung'];
+$moTa = $_POST['moTa'];
 $img = $_FILES['hinhanh']['name'];
 $img_tmp = $_FILES['hinhanh']['tmp_name'];
 $img = time() . '_' . $img;
 
 
 if (isset($_POST['themsanpham'])) {
-    $sql_them = "INSERT INTO `sanpham`(`TenSP`, `Gia`, `MoTa`, `NoiDung`, `Anh`) VALUES ('$tensp','$gia','$content','Chưa cập nhật','$img')";
+    $sql_them = "INSERT INTO `sanpham`(`TenSP`, `Gia`, `MoTa`, `NoiDung`, `Anh`) VALUES ('$tensp','$gia','$moTa','$content','$img')";
     move_uploaded_file($img_tmp, '../../../images/dummy/products/' . $img);
     mysqli_query($mysqli, $sql_them);
     header('Location:../../admin.php?action=quanlysanpham&query=them');
@@ -27,10 +28,10 @@ if (isset($_POST['themsanpham'])) {
             unlink('../../../images/dummy/products/' . $row['hinhanh']);
         }
 
-        $sql_update = "UPDATE sanpham SET TenSP='" . $tensp . "',Gia='" . $gia . "',Anh='" . $img . "',NoiDung='" . $content . "' WHERE MaSP='$_GET[idsanpham]'";
+        $sql_update = "UPDATE sanpham SET TenSP='" . $tensp . "',Gia='" . $gia . "',Anh='" . $img . "',NoiDung='" . $content . "' ,MoTa='" . $moTa . "' WHERE MaSP='$_GET[idsanpham]'";
     } else {
         move_uploaded_file($img_tmp, '../../../images/dummy/products/' . $img);
-        $sql_update = "UPDATE sanpham SET TenSP='" . $tensp . "',Gia='" . $gia . "',NoiDung='" . $content . "' WHERE MaSP='$_GET[idsanpham]'";
+        $sql_update = "UPDATE sanpham SET TenSP='" . $tensp . "',Gia='" . $gia . "',NoiDung='" . $content . "' ,MoTa='" . $moTa . "' WHERE MaSP='$_GET[idsanpham]'";
     }
     mysqli_query($mysqli, $sql_update);
     header('Location:../../admin.php?action=quanlysanpham&query=them');

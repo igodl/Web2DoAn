@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<?php
+include('../module/myClass.php');
+$p=new myClass();
+
+	session_start();
+	if(isset($_SESSION["myuser"]) && isset($_SESSION["mypass"]))
+	{
+		$p->confirmlogin($_SESSION["myuser"],$_SESSION["mypass"]);
+	}
+	else
+	{
+		header('location:../index.php');
+	}
+?>
 <html lang="en">
 
 <head>
@@ -6,7 +20,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
