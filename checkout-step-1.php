@@ -6,9 +6,12 @@
 
 <!-- Mirrored from www.proteusthemes.com/themes/webmarket-html/checkout-step-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Aug 2015 15:42:38 GMT -->
 	<?php
-	ob_start();
+	error_reporting(0);
 	include('module/myClass.php');
 	$p=new myClass();
+	
+	session_start();
+	
 	?>
 <head>
 <meta charset="utf-8">
@@ -123,18 +126,7 @@ Confirm &amp; Pay
 	
 
 	<?php
-	$p->xuatGioHang("SELECT * FROM `giohang`");
-	?>
-	
-	
-	<?php
-		if(isset($_GET['Xoa']))
-		{
-			$id=$_GET['Xoa'];
-			$p->xoaSPGioHang("DELETE FROM `giohang` WHERE MaSP = $id");
-			header('location:checkout-step-1.php');
-			
-		}
+	 $p->xuatGioHangNew();
 	?>
 	
 	
@@ -152,7 +144,7 @@ Shipping costs are calculated based on location. <a href="#">More information</a
 	
 <tr>
 <td class="stronger">Subtotal:</td>
-<td class="stronger"><div class="size-16 align-right"><?php $p->tienGioHang("SELECT * FROM `giohang`") ?></div></td>
+<td class="stronger"><div class="size-16 align-right">$<?php $p->tienGioHangNew() ?></div></td>
 </tr>
 	
 </tbody>
@@ -160,7 +152,7 @@ Shipping costs are calculated based on location. <a href="#">More information</a
 <hr/>
 <p class="right-align">
 In the next step you will choose your shipping address &nbsp; &nbsp;
-<a href="checkout-step-2.html" class="btn btn-primary higher bold">CONTINUE</a>
+<a href="checkout-step-2.php" class="btn btn-primary higher bold">CONTINUE</a>
 </p>
 </div>
 </div>

@@ -311,8 +311,8 @@ Outlet / Sale: &nbsp;
 <div class="cart-container" id="cartContainer">
 	
 <div class="cart">
-<p class="items">CART <span class="dark-clr">(<?php $p->soMonHang("SELECT * FROM `giohang`") ?>)</span></p>
-<p class="dark-clr hidden-tablet"><?php $p->tienGioHang("SELECT * FROM `giohang`")  ?></p>
+<p class="items">CART <span class="dark-clr"></span></p>
+<p class="dark-clr hidden-tablet"></p>
 <a href="checkout-step-1.php" class="btn btn-danger">
  
 <i class="icon-shopping-cart"></i>

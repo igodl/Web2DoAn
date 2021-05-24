@@ -22,12 +22,12 @@ $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
     ?>
         <tr>
            
-            <td><?php echo $row['MaSP'] ?></td>
+            <td style="width: 50px"><?php echo $row['MaSP'] ?></td>
             <td><?php echo $row['TenSP'] ?></td>
             <td><?php echo $row['Gia'] ?></td>
             <td> <img src="../images/dummy/products/<?php echo $row['Anh'] ?>" width="250px"> </td>
             <td><?php echo $row['MoTa'] ?></td>
-			<td><?php echo $row['NoiDung'] ?></td>
+			<td style="width: 400px"><?php echo $row['NoiDung'] ?></td>
             <td><a href="moudules/quanlysanpham/xuly.php?idsanpham=<?php echo $row['MaSP'] ?>">Xóa</a> | <a href="?action=quanlysanpham&query=sua&idsanpham=<?php echo $row['MaSP'] ?>">Sửa</a></td>
         </tr>
     <?php
