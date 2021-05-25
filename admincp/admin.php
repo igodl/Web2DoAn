@@ -27,6 +27,7 @@ $p=new myClass();
     <div class="wrap">
         <?php
         include("config/connect.php");
+		
         include("moudules/menu.php");
         include("moudules/main.php");
 
